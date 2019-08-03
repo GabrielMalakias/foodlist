@@ -15,7 +15,7 @@
     <div class="container">
       <div class="row">
         <!  ----------------- LOGIN PAGE -------------------->
-        <span> Login Page </span>
+        <h3>Login</h3>
         <div class="col s4 offset-s4">
           <div class="row">
             <div class="input-field">
@@ -43,7 +43,7 @@
 
       <!  ----------------- CREATE ACCOUNT PAGE -------------------->
       <div class="row">
-        <span>Create Account</span>
+        <h3>Create Account</h3>
         <div class="col s4 offset-s4">
           <div class="row">
             <div class="input-field">
@@ -76,17 +76,27 @@
 
       <!  ----------------- Home  -------------------->
       <div class="row">
-        <span>Weekly Calendar</span>
-        <ul class="collapsible">
+        <h3>Calendar</h3>
+        <div class="row">
+          <div class="input-field col s12">
+            <i class="material-icons prefix">date_range</i>
+            <input type="text" class="datepicker">
+            <label for="autocomplete-input">Go to...</label>
+          </div>
+
+        </div>
+
+        <div class="row s6 offset-s3 col">
+          <ul class="collapsible">
           <li>
-            <div class="collapsible-header"><i class="material-icons">filter_drama</i>Monday</div>
+            <div class="collapsible-header"><i class="material-icons">filter_drama</i>Monday 25-07</div>
             <div class="collapsible-body">
               <ul class="collection">
               <li class="collection-item avatar">
                 <img src="images/food.png" alt="" class="circle">
-                <span class="title">Lunch</span>
-                <p>Rice and Beans<br>
-                Mango Juice
+                <span class="title">Breakfast</span>
+                <p>Kaesebretzen<br>
+                Grape Juice
                 </p>
               </li>
                <li class="collection-item avatar">
@@ -98,10 +108,8 @@
               </li>
                <li class="collection-item avatar">
                 <img src="images/food.png" alt="" class="circle">
-                <span class="title">Lunch</span>
-                <p>Rice and Beans<br>
-                Mango Juice
-                </p>
+                <span class="title">Dinner</span>
+                <p>Chicken Soup</p>
               </li>
             </ul>
             </div>
@@ -131,6 +139,36 @@
             <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
           </li>
         </ul>
+        </div>
+      </div>
+
+      <!  ----------------- Buying List  -------------------->
+      <div class="row">
+        <span>Buying List</span>
+        <div class="row">
+          <div class="col s12">
+            <div class="row">
+              <h5>Add items to your list</h5>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <i class="material-icons prefix">search</i>
+                <input type="text" id="autocomplete-input" class="autocomplete">
+                <label for="autocomplete-input">Search Box</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <h5>Dont forget buying</h5>
+        </div>
+        <div class="row">
+          <ul class="collection">
+            <li class="collection-item"><div>Rice<a href="#!" class="secondary-content"><i class="material-icons">close</i></a></div></li>
+            <li class="collection-item"><div>Orange Juice<a href="#!" class="secondary-content"><i class="material-icons">close</i></a></div></li>
+            <li class="collection-item"><div>Beans<a href="#!" class="secondary-content"><i class="material-icons">close</i></a></div></li>
+          </ul>
+        </div>
       </div>
     </div>
 
@@ -139,7 +177,20 @@
       $(document).ready(function(){
         $('.collapsible').collapsible();
       });
-    </script>
+
+  $(document).ready(function(){
+    $('input.autocomplete').autocomplete({
+      data: {
+        "Rice": "https://bit.ly/31bkDNy",
+      },
+    });
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.datepicker');
+    var instances = M.Datepicker.init(elems, {});
+  });
+      </script>
   </body>
 </html>
 
